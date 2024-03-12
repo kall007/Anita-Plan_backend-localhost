@@ -1,35 +1,20 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-// TODO: Please make sure you edit the User model to whatever makes sense in this case
-const planSchema = new mongoose.Schema(
-  {
-    title: {
-      type: String,
-      required: [true, "Whats your plan?"],
-    },
-    description: {
-      type: String,
-    },
-    location: {
-      type: String,
-    },
-    startDateAndTime: {
-      type: Number,
-    },
-
-    endDateAndTime: {
-      type: Number,
-    },
-    participants: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
+const planSchema = new Schema({
+  text: {
+    type: String,
+    required: true,
   },
-  {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
-    timestamps: true,
-  }
-);
+  complete: {
+    type: Boolean,
+    default: false,
+  },
+  timestamp: {
+    type: String,
+    default: Date.now(),
+  },
+});
 
 const Plan = mongoose.model("plan", planSchema);
 

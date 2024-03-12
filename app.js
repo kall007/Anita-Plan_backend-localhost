@@ -24,8 +24,8 @@ app.use("/", authRoutes);
 const Plans = require("./routes/plan.routes");
 app.use("/", Plans);
 
-const Calendar = require("./routes/calendar.routes");
-app.use("/", Calendar);
+const Profile = require("./routes/profile.routes");
+app.use("/", Profile);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
