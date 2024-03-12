@@ -27,6 +27,9 @@ app.use("/", Plans);
 const Profile = require("./routes/profile.routes");
 app.use("/", Profile);
 
+const User = require("./routes/user.routes");
+app.use("/", User);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
