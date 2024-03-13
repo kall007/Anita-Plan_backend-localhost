@@ -24,8 +24,8 @@ app.use("/", authRoutes);
 const Plans = require("./routes/plan.routes");
 app.use("/", Plans);
 
-const Profile = require("./routes/profile.routes");
-app.use("/", Profile);
+const Week = require("./routes/week.routes");
+app.use("/", Week);
 
 const User = require("./routes/user.routes");
 app.use("/", User);

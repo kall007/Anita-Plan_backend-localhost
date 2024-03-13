@@ -14,6 +14,10 @@ const planSchema = new Schema({
     type: String,
     default: Date.now(),
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const Plan = mongoose.model("plan", planSchema);

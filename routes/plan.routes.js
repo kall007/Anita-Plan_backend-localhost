@@ -5,8 +5,8 @@ const Plan = require("../models/Plan.model");
 // Route to get all plans
 router.get("/plans", async (req, res) => {
   try {
-    const plans = await Plan.find();
-    res.json({ plans });
+    const plans = await Plan.find().populate("user");
+    res.json(plans);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
