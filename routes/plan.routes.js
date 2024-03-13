@@ -14,8 +14,10 @@ router.get("/plans", async (req, res) => {
 
 // Route to create a new plan
 router.post("/plans/new", (req, res) => {
+  console.log(req.body);
   try {
-    const plan = new Plan({ text: req.body.text });
+    const { text, user } = req.body;
+    const plan = new Plan({ text, user });
     plan.save();
     res.json({ plan });
   } catch (error) {

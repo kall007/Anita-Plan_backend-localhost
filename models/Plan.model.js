@@ -16,10 +16,10 @@ const planSchema = new Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user",
   },
 });
 
-const Plan = mongoose.model("plan", planSchema);
+const Plan = mongoose.model("Plan", planSchema);
 
 module.exports = Plan;
