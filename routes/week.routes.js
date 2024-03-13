@@ -5,7 +5,7 @@ const Week = require("../models/Week.model");
 // Route to create a new week
 router.post("/week", async (req, res) => {
   try {
-    const week = await Week.create(req.body).populate(["user", "plans"]);
+    const week = await Week.create(req.body);
     res.status(201).json({ week });
   } catch (error) {
     res.status(400).json({ error: error.message });
