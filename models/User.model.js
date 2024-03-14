@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
 const userSchema = new Schema({
   email: {
@@ -16,6 +17,11 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  plan: [
+    {
+      type: Schema.Types.Mixed,
+    },
+  ],
 });
 
 const User = model("user", userSchema);

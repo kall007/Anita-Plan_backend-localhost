@@ -19,10 +19,6 @@ const weekSchema = new mongoose.Schema({
       "Sunday",
     ],
   },
-  plans: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "plan",
-  },
 });
 
 const Week = mongoose.model("week", weekSchema);
