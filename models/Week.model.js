@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const weekSchema = new mongoose.Schema({
   user: {
@@ -19,6 +20,11 @@ const weekSchema = new mongoose.Schema({
       "Sunday",
     ],
   },
+  plan: [
+    {
+      type: Schema.Types.Mixed,
+    },
+  ],
 });
 
 const Week = mongoose.model("week", weekSchema);

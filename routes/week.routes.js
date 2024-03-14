@@ -15,7 +15,7 @@ router.post("/week", async (req, res) => {
 // Route to get all weeks
 router.get("/week", async (req, res) => {
   try {
-    const weeks = await Week.find().populate(["user", "plans"]);
+    const weeks = await Week.find().populate("user");
     res.json({ weeks });
   } catch (error) {
     res.status(400).json({ error: error.message });
